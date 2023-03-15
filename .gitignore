@@ -18,3 +18,5 @@ rad.json
 .snapshots/
 cache_*
 ~$*
+TimeReg/app.json
+TimeReg/.vscode/launch.json
