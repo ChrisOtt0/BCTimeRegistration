@@ -2,7 +2,7 @@ table 50120 TimeRegistration
 {
     Caption = 'TimeRegistration';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; EmployeeID; Integer)
@@ -10,9 +10,9 @@ table 50120 TimeRegistration
             Caption = 'EmployeeID';
             DataClassification = ToBeClassified;
         }
-        field(2; "Date "; Date)
+        field(2; "Date"; Date)
         {
-            Caption = 'Date ';
+            Caption = 'Date';
             DataClassification = ToBeClassified;
         }
         field(3; StartTime; Time)
