@@ -1,9 +1,11 @@
 {
   "folders": [
     {
+      "name": ".AL-Go",
       "path": ".AL-Go"
     },
     {
+      "name": "TimeReg",
       "path": "TimeReg"
     }
   ],
