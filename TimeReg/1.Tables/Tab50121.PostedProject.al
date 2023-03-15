@@ -47,6 +47,6 @@ table 50121 "Posted Project"
 
     trigger OnInsert()
     begin
-        xRec.Archived := System.CurrentDateTime();
+        Rec.Archived := System.CurrentDateTime();
     end;
 }
