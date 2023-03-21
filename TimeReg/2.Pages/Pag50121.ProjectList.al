@@ -4,6 +4,7 @@ page 50121 ProjectList
     Caption = 'ProjectList';
     PageType = List;
     SourceTable = Project;
+    CardPageId = "ProjectCard";
 
     layout
     {

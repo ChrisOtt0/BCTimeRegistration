@@ -1,4 +1,4 @@
-page 50121 "Posted Project List"
+page 50124 "Posted Project List"
 {
     ApplicationArea = All;
     Caption = 'Posted Project List';
