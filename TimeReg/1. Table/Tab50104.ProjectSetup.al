@@ -1,4 +1,4 @@
-table 50122 "Project Setup"
+table 50104 "Project Setup"
 {
     Caption = 'Project Setup';
     DataClassification = ToBeClassified;

@@ -1,6 +1,6 @@
-table 50126 "TimeRegistration Setup"
+table 50102 "Consultant Setup"
 {
-    Caption = 'TimeRegistration Setup';
+    Caption = 'Consultant Setup';
     DataClassification = ToBeClassified;
 
     fields
@@ -20,9 +20,9 @@ table 50126 "TimeRegistration Setup"
             Caption = 'File Name';
             DataClassification = ToBeClassified;
         }
-        field(4; "TimeRegistration Nos."; Code[20])
+        field(4; "Consultant Nos."; Code[20])
         {
-            Caption = 'TimeRegistration Nos.';
+            Caption = 'Consultant Nos.';
             TableRelation = "No. Series";
             DataClassification = AccountData;
         }

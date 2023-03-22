@@ -1,9 +1,9 @@
-page 50129 "TimeRegistration Setup"
+page 50104 "Consultant Setup"
 {
     ApplicationArea = All;
-    Caption = 'Time Registration Setup';
+    Caption = 'Consultant Setup';
     PageType = Card;
-    SourceTable = "TimeRegistration Setup";
+    SourceTable = "Consultant Setup";
 
     layout
     {

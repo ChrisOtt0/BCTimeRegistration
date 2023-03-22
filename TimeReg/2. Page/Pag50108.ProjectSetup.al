@@ -1,4 +1,4 @@
-page 50123 "Project Setup"
+page 50108 "Project Setup"
 {
     ApplicationArea = All;
     Caption = 'Project Setup';

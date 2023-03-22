@@ -1,4 +1,4 @@
-codeunit 50121 "Project"
+codeunit 50103 "Project Setup"
 {
     TableNo = Project;
 
@@ -22,7 +22,7 @@ codeunit 50121 "Project"
             Message('Project setup done');
     end;
 
-    procedure NumStudentSetup()
+    procedure NumProjectSetup()
 
     var
         ProjectSetup: Record "Project Setup";
@@ -32,7 +32,7 @@ codeunit 50121 "Project"
     begin
         //no series creation
         ProjectSetup.init;
-        NoSerie.Code := 'STD';
+        NoSerie.Code := 'PRJ';
         NoSerie.Description := 'Project Management';
         NoSerie."Default Nos." := true;
         NoSerie."Manual Nos." := true;
