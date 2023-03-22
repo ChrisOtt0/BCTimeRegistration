@@ -25,12 +25,14 @@ table 50121 Project
             Caption = 'Hours Spend';
             // FieldClass = FlowField;
             // TODO CALCFORMULA 
+            DataClassification = ToBeClassified;
+
         }
-        field(5; "HoursRemaining"; Integer)
+        field(5; HoursRemaining; Integer)
         {
             Caption = 'Hours Remaining';
-            // FieldClass = FlowField;
-            // TODO CALCFORMULA 
+            DataClassification = ToBeClassified;
+
         }
 
         field(100; "No. Series"; Code[20])
@@ -48,5 +50,15 @@ table 50121 Project
         }
     }
 
-    // TODO Clean up all depending items in table "TimeRegistration"
+    trigger OnModify()
+    var
+        ProjectRec: Record "Project";
+    begin
+        Rec.HoursRemaining := Rec.HoursEstimated - Rec.HoursSpend;
+
+        Commit();
+
+        Rec.MODIFY();
+
+    end;
 }

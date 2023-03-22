@@ -11,14 +11,14 @@ pageextension 50120 ExtendNavigationArea extends "Order Processor Role Center"
                     RunObject = page "Projectlist";
                     ApplicationArea = All;
                 }
-                action("Time Registrations")
-                {
-                    RunObject = page "TimeRegistrationList";
-                    ApplicationArea = All;
-                }
                 action("Employees")
                 {
                     RunObject = page "5201";
+                    ApplicationArea = All;
+                }
+                action("Time Registrations")
+                {
+                    RunObject = page "TimeRegistrationList";
                     ApplicationArea = All;
                 }
                 action("Project setup")

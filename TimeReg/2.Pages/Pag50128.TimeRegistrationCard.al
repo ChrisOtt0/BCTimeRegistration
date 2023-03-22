@@ -13,7 +13,7 @@ page 50128 TimeRegistrationCard
             {
                 Caption = 'General';
                 
-                field(ID; Rec.ID)
+                field(ID; Rec."Registration ID")
                 {
                     ToolTip = 'Specifies the value of the ID field.';
                 }

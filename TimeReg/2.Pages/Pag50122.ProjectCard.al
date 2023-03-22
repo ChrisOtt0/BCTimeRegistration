@@ -13,10 +13,6 @@ page 50122 ProjectCard
             {
                 Caption = 'General';
 
-                field(No; Rec.No)
-                {
-                    ToolTip = 'Specifies the value of the Name field.';
-                }
                 field(Name; Rec.Name)
                 {
                     ToolTip = 'Specifies the value of the Name field.';
@@ -43,15 +39,6 @@ page 50122 ProjectCard
                     UpdatePropagation = Both;
                 }
             }
-
-            group("Time Registrations")
-            {
-                part(TimeRegistrationPage; 50127)
-                {
-                    SubPageLink = "ID" = field(No);
-                    UpdatePropagation = Both;
-                }
-            }
         }
     }
     actions
@@ -68,7 +55,7 @@ page 50122 ProjectCard
                 var
 
                 begin
-                    
+
                 end;
             }
         }

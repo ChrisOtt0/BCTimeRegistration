@@ -5,9 +5,9 @@ table 50125 TimeRegistration
 
     fields
     {
-        field(1; ID; Code[20])
+        field(1; "Registration ID"; Code[20])
         {
-            Caption = 'ID';
+            Caption = 'Registration ID';
             DataClassification = ToBeClassified;
         }
         field(2; ProjectID; Code[20])
@@ -28,7 +28,7 @@ table 50125 TimeRegistration
     }
     keys
     {
-        key(PK; ID)
+        key(PK; "Registration ID")
         {
             Clustered = true;
         }
