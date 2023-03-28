@@ -43,7 +43,7 @@ codeunit 50103 "Project Setup"
         NoSerieLine."Ending No." := 'PRJ9000';
         if NoSerieLine.Insert then;
         ProjectSetup."Project Nos." := NoSerie.code;
-        ProjectSetup.Modify();
+        ProjectSetup.Insert();
     end;
 
     var
