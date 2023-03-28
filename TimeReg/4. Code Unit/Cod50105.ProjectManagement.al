@@ -56,4 +56,59 @@ codeunit 50105 ProjectManagement
         END;
         EXIT(Projects);
     end;
+
+    // Retrieve all project IDs
+    procedure GetProjectNos() Output: Text;
+    var
+        ProjectTable: Record Project;
+    begin
+        ProjectTable.Reset();
+        if not ProjectTable.FindFirst() then
+            exit;
+
+        repeat
+            if Output <> '' then
+                Output := Output + ',';
+            Output := Output + '"' + ProjectTable.No + '"';
+        until ProjectTable.Next() = 0;
+
+        Output := '[' + Output + ']';
+    end;
+
+    // Retrieve all consultant IDs based on ProjectID
+    procedure GetConsultantNos(Project: Text) Output: Text;
+    var
+        PCRegTable: Record ProjectConsultantRegistration;
+    begin
+        PCRegTable.Reset();
+        PCRegTable.SetFilter(PCRegTable."Project ID", '=%1', Project);
+
+        if not PCRegTable.FindFirst() then
+            exit;
+
+        repeat
+            if Output <> '' then
+                Output := Output + ',';
+            Output := Output + '"' + PCRegTable."Consultant ID" + '"';
+        until PCRegTable.Next() = 0;
+
+        Output := '[' + Output + ']';
+    end;
+
+    // Add Minutes to consultant Time Registration
+    procedure InsertTimeReg(Project: Text; Consultant: Text; Minutes: Integer): Boolean;
+    var
+        CTimeReg: Record ConsultantTRTable;
+    begin
+        CTimeReg.Reset();
+        CTimeReg.Init();
+        CTimeReg.Project := Project;
+        CTimeReg."Consultant ID" := Consultant;
+        CTimeReg.Minutes := Minutes;
+
+        if CTimeReg.Insert(true) then
+            exit(true);
+
+        exit(false);
+    end;
 }
