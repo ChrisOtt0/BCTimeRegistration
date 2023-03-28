@@ -50,6 +50,25 @@ page 50106 ProjectCard
         area(processing)
         {
             // Actions go here
+            action("Post Project")
+            {
+                ApplicationArea = All;
+                Image = Archive;
+
+                trigger OnAction()
+                var
+                    PostedProjectsTable: Record PostedProject;
+                begin
+                    PostedProjectsTable.Init();
+                    PostedProjectsTable.ID := Rec.No;
+                    PostedProjectsTable.Name := Rec.Name;
+                    PostedProjectsTable.TimeEstimated := Rec.TimeEstimated;
+                    PostedProjectsTable.TimeSpend := Rec.TimeSpend;
+                    PostedProjectsTable.TimeRemaining := Rec.TimeRemaining;
+                    PostedProjectsTable.Insert(true);
+                    Rec.Delete(true);
+                end;
+            }
         }
     }
 }
