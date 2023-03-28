@@ -51,6 +51,20 @@ page 50105 ProjectList
                     ProjectSetup.NumProjectSetup();
                 end;
             }
+
+            // Test action for Scheduled Job
+            action("Test Project Job")
+            {
+                ApplicationArea = All;
+                Image = Job;
+
+                trigger OnAction()
+                var
+                    Unit: Codeunit ProjectJob;
+                begin
+                    Unit.EmailJob();
+                end;
+            }
         }
     }
     trigger OnAfterGetRecord()
