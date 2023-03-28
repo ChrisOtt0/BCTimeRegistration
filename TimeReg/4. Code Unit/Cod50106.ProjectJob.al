@@ -3,12 +3,23 @@ codeunit 50106 ProjectJob
     trigger OnRun()
     begin
         PostTimeRegJob();
-        // EmailJob();
+        EmailJob();
     end;
 
     procedure PostTimeRegJob();
+    var
+        CTRTable: Record ConsultantTRTable;
     begin
+        CTRTable.Reset();
+        CTRTable.SetFilter(CTRTable.IsPosted, '=%1', false);
 
+        if not CTRTable.FindFirst() then
+            exit;
+
+        repeat
+            CTRTable.IsPosted := true;
+            CTRTable.Modify()
+        until CTRTable.Next() = 0;
     end;
 
     procedure EmailJob();

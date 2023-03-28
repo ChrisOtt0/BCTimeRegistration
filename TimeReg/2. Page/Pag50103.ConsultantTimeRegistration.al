@@ -29,6 +29,10 @@ page 50103 "Consultant Time"
                 {
                     ToolTip = 'Specifies the value of the Time field.';
                 }
+                field("IsPosted"; Rec.IsPosted)
+                {
+                    ToolTip = 'Specifies if the Time Registration has been posted.';
+                }
             }
         }
     }

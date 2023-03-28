@@ -30,6 +30,11 @@ table 50105 ConsultantTRTable
             Caption = 'Time spend in minutes';
             DataClassification = ToBeClassified;
         }
+        field(5; "IsPosted"; Boolean)
+        {
+            Caption = 'Is Posted by Scheduled Job';
+            Editable = false;
+        }
     }
     keys
     {
@@ -38,4 +43,11 @@ table 50105 ConsultantTRTable
             Clustered = true;
         }
     }
+
+    trigger OnModify()
+    begin
+        if IsPosted then begin
+            Error('Entry has been posted and cannot be modified.');
+        end;
+    end;
 }
